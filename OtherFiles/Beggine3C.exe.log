@@ -1,0 +1,134 @@
+
+--------------------------------------------------
+TXLib предупреждает:
+
+Программа: C:\Users\Mihail\Desktop\c++\Beggine3C.exe,
+
+ВНЕЗАПНО: Нарушение доступа к памяти.
+
+#2: Исключение EXCEPTION_ACCESS_VIOLATION (0xC0000005) при выполнении кода по адресу 0x662547A0 в функции SymGetLineFromAddrW64(). Попытка прочесть данные по адресу 0x07F2DF02. Спасибо _txVectoredExceptionHandler(), что сообщил. Люблю его <3
+
+#3: TXLib [Ver: 00173a, Rev: 105, Date: 2018-03-19 00:00:00 +0300], Instance: 0x004FF2C0 (32-bit), Flags: CMdrE0, Thread: 0x2448 (Main), GetLastError(): 87 (Параметр задан неверно). 
+
+--------------------------------------------------
+Стек вызовов:
+
+# 0 0x662547A0 in C:\Users\Mihail\Desktop\TX\Windows\MgwHelp32.dll: SymGetLineFromAddrW64()
+# 1 0x66257FB8 in C:\Users\Mihail\Desktop\TX\Windows\MgwHelp32.dll: SymGetLineFromAddrW64()
+# 2 0x66262053 in C:\Users\Mihail\Desktop\TX\Windows\MgwHelp32.dll: SymGetLineFromAddrW64()
+# 3 0x66259939 in C:\Users\Mihail\Desktop\TX\Windows\MgwHelp32.dll: SymGetLineFromAddrW64()
+
+--------------------------------------------------
+Стек вызовов TX:
+
+# 0 in bool {anonymous}::TX::_txSymGetFromAddr(void*, {anonymous}::TX::Win32::SYMBOL_INFO**, {anonymous}::TX::Win32::IMAGEHLP_LINE64**, const char**, const char**, int) at C:\Users\Mihail\Desktop\TX\TXLib.h (9832):
+
+   9830: 
+   9831: $       SetLastError (0);
+=> 9832: $       (_TX_CALL (MinGW::SymFromAddr, (process, (uintptr_t) addr, &ofs, sym)) && RES_(y)) ||
+   9833:         (_TX_CALL (Win32::SymFromAddr, (process, (uintptr_t) addr, &ofs, sym)) && RES_(Y)) ||
+   9834:             DBG_("SymFromAddr (0x%p) failed", addr);
+
+# 1 in const char* {anonymous}::TX::_txCaptureStackBackTra   7229:         { $ _txConsole_Detach (waitableParent && !externTerm); }
+   72   9594: $       bool                    inTX   = false;
+   9595: 
+=> 9596:         if (addr)                { $ inTX = _txSymGetFromAddr ((char*) addr - 1, &sym, &line, &m   7086:     if (retcode != 0) txOutputDebugPrintf ("%s - WARNING: %s (%d) called\n", _TX_VERSION, __func__, retcode);
+   7087: 
+=> 7088: $1  _txCleanup();
+   7089: 
+   7090:     Win32::exit (retcode);
+
+# 3 in unsigned int {anonymous}::TX::_txC  10767: bool txClear (HDC dc /*= txDC()*/)
+  10768:     {
+=>10769: $1  if (_TX_DEFAULT_HDC_FAILED (dc)) return false;
+  10770: 
+  10771: $   POINT size = txGetExtent (dc);
+
+# 3 in void Moving() at C:\Users\Mihail\Desktop\c++\Beggine3C.cpp (115):
+
+    113:         {
+    114:         txSetFillColour (TX_BLACK);
+=>  115:         txClear ();
+    116: 
+    117:         SkateDraw (xSkate, ySkate, t%40*2);
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 105, Date: 2018-03-19 00:00:00 +0300]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	C:\Users\Mihail\Desktop\TX\TXLib.h
+Compiled:	May 16 2018 17:45:07, GNU g++ 4.8.1, std=201103L, MinGW Runtime 3.20, 32-bit, DEBUG
+Started:	May 16 2018 17:45:08
+
+Run file:	C:\Users\Mihail\Desktop\c++\Beggine3C.exe
+Directory:	C:\Users\Mihail\Desktop\c++
+
+--------------------------------------------------
+
+--------------------------------------------------
+TXLib предупреждает:
+
+Программа: C:\Users\Mihail\Desktop\c++\Beggine3C.exe,
+
+ВНЕЗАПНО: Нарушение доступа к памяти.
+
+#2: Исключение EXCEPTION_ACCESS_VIOLATION (0xC0000005) при выполнении кода по адресу 0x662547A0 в функции SymGetLineFromAddrW64(). Попытка прочесть данные по адресу 0x07F2DF02. Спасибо _txVectoredExceptionHandler(), что сообщил. Люблю его <3
+
+#3: TXLib [Ver: 00173a, Rev: 105, Date: 2018-03-19 00:00:00 +0300], Instance: 0x004FF2C0 (32-bit), Flags: CMdrE0, Thread: 0x2820 (Canvas), GetLastError(): 87 (Параметр задан неверно). 
+
+--------------------------------------------------
+Стек вызовов:
+
+# 0 0x662547A0 in C:\Users\Mihail\Desktop\TX\Windows\MgwHelp32.dll: SymGetLineFromAddrW64()
+# 1 0x66257FB8 in C:\Users\Mihail\Desktop\TX\Windows\MgwHelp32.dll: SymGetLineFromAddrW64()
+# 2 0x66262053 in C:\Users\Mihail\Desktop\TX\Windows\MgwHelp32.dll: SymGetLineFromAddrW64()
+# 3 0x66259939 in C:\Users\Mihail\Desktop\TX\Windows\MgwHelp32.dll: SymGetLineFromAddrW64()
+
+--------------------------------------------------
+Стек вызовов TX:
+
+# 0 in bool {anonymous}::TX::_txSymGetFromAddr(void*, {anonymous}::TX::Win32::SYMBOL_INFO**, {anonymous}::TX::Win32::IMAGEHLP_LINE64**, const char**, const char**, int) at C:\Users\Mihail\Desktop\TX\TXLib.h (9832):
+
+   9830: 
+   9831: $       SetLastError (0);
+=> 9832: $       (_TX_CALL (MinGW::SymFromAddr, (process, (uintptr_t) addr, &ofs, sym)) && RES_(y)) ||
+   9833:         (_TX_CALL (Win32::SymFromAddr, (process, (uintptr_t) addr, &ofs, sym)) && RES_(Y)) ||
+   9834:             DBG_("SymFromAddr (0x%p) failed", addr);
+
+# 1 in const char* {anonymous}::TX::_txCaptureStackBackTra   7229:         { $ _txConsole_Detach (waitableParent && !externTerm); }
+   72   9594: $       bool                    inTX   = false;
+   9595: 
+=> 9596:         if (addr)                { $ inTX = _txSymGetFromAddr ((char*) addr - 1, &sym, &line, &m   7086:     if (retcode != 0) txOutputDebugPrintf ("%s - WARNING: %s (%d) called\n", _TX_VERSION, __func__, retcode);
+   7087: 
+=> 7088: $1  _txCleanup();
+   7089: 
+   7090:     Win32::exit (retcode);
+
+# 3 in unsigned int {anonymous}::TX::_txC  10767: bool txClear (HDC dc /*= txDC()*/)
+  10768:     {
+=>10769: $1    7665: $   if (_txRunning && _txMain)         // Main window is destroyed but main() is still running.
+   7666:         {                              // No chances for good termination, so use exit().
+=> 7667: $       ::exit ((int) msg.wParam);
+   7668:         }
+   7669: 
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 105, Date: 2018-03-19 00:00:00 +0300]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	C:\Users\Mihail\Desktop\TX\TXLib.h
+Compiled:	May 16 2018 17:45:07, GNU g++ 4.8.1, std=201103L, MinGW Runtime 3.20, 32-bit, DEBUG
+Started:	May 16 2018 17:45:08
+
+Run file:	C:\Users\Mihail\Desktop\c++\Beggine3C.exe
+Directory:	C:\Users\Mihail\Desktop\c++
+
+--------------------------------------------------

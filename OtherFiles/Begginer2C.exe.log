@@ -1,0 +1,58 @@
+
+--------------------------------------------------
+TXLib соболезнует...
+
+Программа: C:\Users\Mihail\Desktop\c++\Begginer2C.exe, файл: C:\Users\Mihail\Desktop\TX\TXLib.h, строка: 10807, функция: bool {anonymous}::TX::txLine(double, double, double, double, HDC),
+
+Сообщение: Окно рисования не создано или не в порядке.
+
+#1: TXLib [Ver: 00173a, Rev: 105, Date: 2018-03-19 00:00:00 +0300], Instance: 0x004FE2C0 (32-bit), Flags: Cmdre0, Thread: 0x1BA4 (Main), GetLastError(): 13 (Недопустимые данные). 
+
+--------------------------------------------------
+Стек вызовов:
+
+# 0 0x0041AAA8 in C:\Users\Mihail\Desktop\c++\Begginer2C.exe: txLine() at C:/Users/Mihail/Desktop/TX/TXLib.h (10807)
+
+# 1 0x0042673D in C:\Users\Mihail\Desktop\c++\Begginer2C.exe: main() at C:/Users/Mihail/Desktop/c++/Begginer2C.cpp (5):
+
+      3: int main()
+      4:     {
+=>    5:     txLine (50, 900, 70, 850);
+      6:     txLine (70, 850, 150, 900);
+      7:     }
+
+--------------------------------------------------
+Стек вызовов TX:
+
+# 0 in bool {anonymous}::TX::txLine(double, double, double, double, HDC) at C:\Users\Mihail\Desktop\TX\TXLib.h (10807):
+
+  10805: bool txLine (double x0, double y0, double x1, double y1, HDC dc /*= txDC()*/)
+  10806:     {
+=>10807: $1  if (_TX_DEFAULT_HDC_FAILED (dc)) return false;
+  10808: 
+  10809: $   bool ok  = txGDI ((Win32::MoveToEx (dc, ROUND (x0), ROUND (y0), NULL)), dc);
+
+# 1 in int main() at C:\Users\Mihail\Desktop\c++\Begginer2C.cpp (5):
+
+      3: int main()
+      4:     {
+=>    5:     txLine (50, 900, 70, 850);
+      6:     txLine (70, 850, 150, 900);
+      7:     }
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 105, Date: 2018-03-19 00:00:00 +0300]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	C:\Users\Mihail\Desktop\TX\TXLib.h
+Compiled:	May  2 2018 17:38:50, GNU g++ 4.8.1, std=201103L, MinGW Runtime 3.20, 32-bit, DEBUG
+Started:	May 02 2018 17:38:51
+
+Run file:	C:\Users\Mihail\Desktop\c++\Begginer2C.exe
+Directory:	C:\Users\Mihail\Desktop\c++
+
+--------------------------------------------------

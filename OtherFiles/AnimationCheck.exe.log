@@ -1,0 +1,928 @@
+
+--------------------------------------------------
+TXLib соболезнует...
+
+Программа: \\vmware-host\Shared Folders\Windows 7\AnimationCheck.exe, файл: C:\Users\Misha\Desktop\TX\TXLib.h, строка: 10730, функция: HBRUSH__* {anonymous}::TX::txSetFillColor(COLORREF, HDC),
+
+Сообщение: Окно рисования не создано или не в порядке.
+
+#1: TXLib [Ver: 00173a, Rev: 105, Date: 2018-06-12 00:00:00 +0300], Instance: 0x004FE2C0 (32-bit), Flags: Cmdre0, Thread: 0xCB4 (Main), GetLastError(): 13 (Недопустимые данные). 
+
+--------------------------------------------------
+Стек вызовов:
+
+# 0 0x00419EFA in \\vmware-host\Shared Folders\Windows 7\AnimationCheck.exe: txSetFillColor() at C:/Users/Misha/Desktop/TX/TXLib.h (10730)
+
+# 1 0x004268CB in \\vmware-host\Shared Folders\Windows 7\AnimationCheck.exe: main() at //vmware-host/Shared Folders/Windows 7/AnimationCheck.cpp (9):
+
+      7:         {
+      8: 
+=>    9:         txSetFillColor (TX_BLACK);
+     10: 
+     11:         txClear ();
+
+--------------------------------------------------
+Стек вызовов TX:
+
+# 0 in HBRUSH__* {anonymous}::TX::txSetFillColor(COLORREF, HDC) at C:\Users\Misha\Desktop\TX\TXLib.h (10730):
+
+  10728: HBRUSH txSetFillColor (COLORREF color, HDC dc /*= txDC()*/)
+  10729:     {
+=>10730: $1  if (_TX_DEFAULT_HDC_FAILED (dc)) return NULL;
+  10731: 
+  10732: $   HBRUSH brush = (color == TX_TRANSPARENT)? (HBRUSH) Win32::GetStockObject (HOLLOW_BRUSH) : Win32::CreateSolidBrush (color);
+
+# 1 in int main() at \\vmware-host\Shared Folders\Windows 7\AnimationCheck.cpp (9):
+
+      7:         {
+      8: 
+=>    9:         txSetFillColor (TX_BLACK);
+     10: 
+     11:         txClear ();
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 105, Date: 2018-06-12 00:00:00 +0300]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	C:\Users\Misha\Desktop\TX\TXLib.h
+Compiled:	Aug  1 2018 18:40:02, GNU g++ 4.8.1, std=201103L, MinGW Runtime 3.20, 32-bit, DEBUG
+Started:	Aug 01 2018 18:40:05
+
+Run file:	\\vmware-host\Shared Folders\Windows 7\AnimationCheck.exe
+Directory:	\\vmware-host\Shared Folders\Windows 7
+
+--------------------------------------------------
+
+--------------------------------------------------
+TXLib сообщает:
+
+Программа: \\vmware-host\Shared Folders\Windows 7\AnimationCheck.exe, файл: C:\Users\Misha\Desktop\TX\TXLib.h, строка: 7920, функция: bool {anonymous}::TX::_txCanvas_OnDESTROY(HWND),
+
+Сообщение: Cannot lock GDI to free resources
+
+#1: TXLib [Ver: 00173a, Rev: 105, Date: 2018-06-12 00:00:00 +0300], Instance: 0x004FE2C0 (32-bit), Flags: CMdRE0, Thread: 0x1244 (Canvas), errno: 34 (Result too large). 
+
+--------------------------------------------------
+Стек вызовов:
+
+# 0 0x00409AEF in \\vmware-host\Shared Folders\Windows 7\AnimationCheck.exe: _txCanvas_OnDESTROY() at C:/Users/Misha/Desktop/TX/TXLib.h (7920)
+# 1 0x0040930D in \\vmware-host\Shared Folders\Windows 7\AnimationCheck.exe: _txCanvas_WndProc() at C:/Users/Misha/Desktop/TX/TXLib.h (7852)
+# 2 0x75F0C4E7 in C:\Windows\system32\USER32.dll: gapfnScSendMessage()
+# 3 0x75F0C5E7 in C:\Windows\system32\USER32.dll: gapfnScSendMessage()
+# 4 0x75F04F0E in C:\Windows\system32\USER32.dll: GetScrollBarInfo()
+# 5 0x75F04F7D in C:\Windows\system32\USER32.dll: GetScrollBarInfo()
+# 6 0x77736FEE in C:\Windows\SYSTEM32\ntdll.dll: KiUserCallbackDispatcher()
+# 7 0x75EFBB13 in C:\Windows\system32\USER32.dll: CharLowerW()
+# 8 0x75EFBB70 in C:\Windows\system32\USER32.dll: DefWindowProcA()
+# 9 0x00409501 in \\vmware-host\Shared Folders\Windows 7\AnimationCheck.exe: _txCanvas_WndProc() at C:/Users/Misha/Desktop/TX/TXLib.h (7879)
+#10 0x75F0C4E7 in C:\Windows\system32\USER32.dll: gapfnScSendMessage()
+#11 0x75F0C5E7 in C:\Windows\system32\USER32.dll: gapfnScSendMessage()
+#12 0x75F04F0E in C:\Windows\system32\USER32.dll: GetScrollBarInfo()
+#13 0x75F04F7D in C:\Windows\system32\USER32.dll: GetScrollBarInfo()
+#14 0x77736FEE in C:\Windows\SYSTEM32\ntdll.dll: KiUserCallbackDispatcher()
+#15 0x75EFBB13 in C:\Windows\system32\USER32.dll: CharLowerW()
+#16 0x74335EEF in C:\Windows\system32\uxtheme.dll: Ordinal45()
+#17 0x7434D128 in C:\Windows\system32\uxtheme.dll: SetWindowThemeAttribute()
+#19 0x74335DDA in C:\Windows\system32\uxtheme.dll: Ordinal45()
+#20 0x75EFC6B7 in C:\Windows\system32\USER32.dll: EnumDesktopsW()
+#21 0x00409501 in \\vmware-host\Shared Folders\Windows 7\AnimationCheck.exe: _txCanvas_WndProc() at C:/Users/Misha/Desktop/TX/TXLib.h (7879)
+#22 0x75F0C4E7 in C:\Windows\system32\USER32.dll: gapfnScSendMessage()
+#23 0x75F05F9F in C:\Windows\system32\USER32.dll: SetPropW()
+#24 0x75F0CC19 in C:\Windows\system32\USER32.dll: gapfnScSendMessage()
+#25 0x75F02E41 in C:\Windows\system32\USER32.dll: DispatchMessageA()
+#26 0x00407C5D in \\vmware-host\Shared Folders\Windows 7\AnimationCheck.exe: _txCanvas_ThreadProc() at C:/Users/Misha/Desktop/TX/TXLib.h (7655)
+#27 0x75B51287 in C:\Windows\system32\msvcrt.dll: itow_s()
+#28 0x75B51328 in C:\Windows\system32\msvcrt.dll: endthreadex()
+#29 0x767A3C45 in C:\Windows\system32\kernel32.dll: BaseThreadInitThunk()
+#30 0x777537F5 in C:\Windows\SYSTEM32\ntdll.dll: RtlInitializeExceptionChain()
+#31 0x777537C8 in C:\Windows\SYSTEM32\ntdll.dll: RtlInitializeExceptionChain()
+
+--------------------------------------------------
+Стек вызовов TX:
+
+# 0 in bool {anonymous}::TX::_txCanvas_OnDESTROY(HWND) at C:\Users\Misha\Desktop\TX\TXLib.h (7920):
+
+   7918: $   bool locked = false;
+   7919: $   _txWaitFor ((locked = txLock (false), locked), _TX_TIMEOUT);
+=> 7920: $   if (!locked) TX_DEBUG_ERROR ("Cannot lock GDI to free resources");
+   7921: 
+   7922:     // Освобождаем пользовательские ресурсы
+
+# 1 in LRESULT {anonymous}::TX::_txCanvas_WndProc(HWND, UINT, WPARAM, LPARAM) at C:\Users\Misha\Desktop\TX\TXLib.h (7852):
+
+   7850: 
+   7851:         case WM_CLOSE:        $ if (_txCanvas_OnCLOSE      (wnd)) break; else return 0;
+=> 7852:         case WM_DESTROY:      $     _txCanvas_OnDESTROY    (wnd);             return 0;
+   7853: 
+   7854:         case WM_PAINT:        $     _txCanvas_OnPAINT      (wnd);             return 0;
+
+# 2 in LRESULT {anonymous}::TX::_txCanvas_WndProc(HWND, UINT, WPARAM, LPARAM) at C:\Users\Misha\Desktop\TX\TXLib.h (7879):
+
+   7877:         }
+   7878: 
+=> 7879: $   return DefWindowProc (wnd, msg, wpar, lpar);
+   7880:     }
+   7881: 
+
+# 3 in LRESULT {anonymous}::TX::_txCanvas_WndProc(HWND, UINT, WPARAM, LPARAM) at C:\Users\Misha\Desktop\TX\TXLib.h (7879):
+
+   7877:         }
+   7878: 
+=> 7879: $   return DefWindowProc (wnd, msg, wpar, lpar);
+   7880:     }
+   7881: 
+
+# 4 in unsigned int {anonymous}::TX::_txCanvas_ThreadProc(void*) at C:\Users\Misha\Desktop\TX\TXLib.h (7655):
+
+   7653: 
+   7654: $       TranslateMessage (&msg);
+=> 7655: $       DispatchMessage  (&msg);
+   7656: 
+   7657: $       Sleep (0);
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 105, Date: 2018-06-12 00:00:00 +0300]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	C:\Users\Misha\Desktop\TX\TXLib.h
+Compiled:	Aug  1 2018 18:41:19, GNU g++ 4.8.1, std=201103L, MinGW Runtime 3.20, 32-bit, DEBUG
+Started:	Aug 01 2018 18:41:22
+
+Run file:	\\vmware-host\Shared Folders\Windows 7\AnimationCheck.exe
+Directory:	\\vmware-host\Shared Folders\Windows 7
+
+--------------------------------------------------
+
+--------------------------------------------------
+TXLib сообщает:
+
+Программа: \\vmware-host\Shared Folders\Windows 7\AnimationCheck.exe, файл: C:\Users\Misha\Desktop\TX\TXLib.h, строка: 7920, функция: bool {anonymous}::TX::_txCanvas_OnDESTROY(HWND),
+
+Сообщение: Cannot lock GDI to free resources
+
+#1: TXLib [Ver: 00173a, Rev: 105, Date: 2018-06-12 00:00:00 +0300], Instance: 0x004FE2C0 (32-bit), Flags: CMdRE0, Thread: 0x1418 (Canvas), errno: 34 (Result too large). 
+
+--------------------------------------------------
+Стек вызовов:
+
+# 0 0x00409AEF in \\vmware-host\Shared Folders\Windows 7\AnimationCheck.exe: _txCanvas_OnDESTROY() at C:/Users/Misha/Desktop/TX/TXLib.h (7920)
+# 1 0x0040930D in \\vmware-host\Shared Folders\Windows 7\AnimationCheck.exe: _txCanvas_WndProc() at C:/Users/Misha/Desktop/TX/TXLib.h (7852)
+# 2 0x75F0C4E7 in C:\Windows\system32\USER32.dll: gapfnScSendMessage()
+# 3 0x75F0C5E7 in C:\Windows\system32\USER32.dll: gapfnScSendMessage()
+# 4 0x75F04F0E in C:\Windows\system32\USER32.dll: GetScrollBarInfo()
+# 5 0x75F04F7D in C:\Windows\system32\USER32.dll: GetScrollBarInfo()
+# 6 0x77736FEE in C:\Windows\SYSTEM32\ntdll.dll: KiUserCallbackDispatcher()
+# 7 0x75EFBB13 in C:\Windows\system32\USER32.dll: CharLowerW()
+# 8 0x75EFBB70 in C:\Windows\system32\USER32.dll: DefWindowProcA()
+# 9 0x00409501 in \\vmware-host\Shared Folders\Windows 7\AnimationCheck.exe: _txCanvas_WndProc() at C:/Users/Misha/Desktop/TX/TXLib.h (7879)
+#10 0x75F0C4E7 in C:\Windows\system32\USER32.dll: gapfnScSendMessage()
+#11 0x75F0C5E7 in C:\Windows\system32\USER32.dll: gapfnScSendMessage()
+#12 0x75F04F0E in C:\Windows\system32\USER32.dll: GetScrollBarInfo()
+#13 0x75F04F7D in C:\Windows\system32\USER32.dll: GetScrollBarInfo()
+#14 0x77736FEE in C:\Windows\SYSTEM32\ntdll.dll: KiUserCallbackDispatcher()
+#15 0x75EFBB13 in C:\Windows\system32\USER32.dll: CharLowerW()
+#16 0x74335EEF in C:\Windows\system32\uxtheme.dll: Ordinal45()
+#17 0x7434D128 in C:\Windows\system32\uxtheme.dll: SetWindowThemeAttribute()
+#19 0x74335DDA in C:\Windows\system32\uxtheme.dll: Ordinal45()
+#20 0x75EFC6B7 in C:\Windows\system32\USER32.dll: EnumDesktopsW()
+#21 0x00409501 in \\vmware-host\Shared Folders\Windows 7\AnimationCheck.exe: _txCanvas_WndProc() at C:/Users/Misha/Desktop/TX/TXLib.h (7879)
+#22 0x75F0C4E7 in C:\Windows\system32\USER32.dll: gapfnScSendMessage()
+#23 0x75F05F9F in C:\Windows\system32\USER32.dll: SetPropW()
+#24 0x75F0CC19 in C:\Windows\system32\USER32.dll: gapfnScSendMessage()
+#25 0x75F02E41 in C:\Windows\system32\USER32.dll: DispatchMessageA()
+#26 0x00407C5D in \\vmware-host\Shared Folders\Windows 7\AnimationCheck.exe: _txCanvas_ThreadProc() at C:/Users/Misha/Desktop/TX/TXLib.h (7655)
+#27 0x75B51287 in C:\Windows\system32\msvcrt.dll: itow_s()
+#28 0x75B51328 in C:\Windows\system32\msvcrt.dll: endthreadex()
+#29 0x767A3C45 in C:\Windows\system32\kernel32.dll: BaseThreadInitThunk()
+#30 0x777537F5 in C:\Windows\SYSTEM32\ntdll.dll: RtlInitializeExceptionChain()
+#31 0x777537C8 in C:\Windows\SYSTEM32\ntdll.dll: RtlInitializeExceptionChain()
+
+--------------------------------------------------
+Стек вызовов TX:
+
+# 0 in bool {anonymous}::TX::_txCanvas_OnDESTROY(HWND) at C:\Users\Misha\Desktop\TX\TXLib.h (7920):
+
+   7918: $   bool locked = false;
+   7919: $   _txWaitFor ((locked = txLock (false), locked), _TX_TIMEOUT);
+=> 7920: $   if (!locked) TX_DEBUG_ERROR ("Cannot lock GDI to free resources");
+   7921: 
+   7922:     // Освобождаем пользовательские ресурсы
+
+# 1 in LRESULT {anonymous}::TX::_txCanvas_WndProc(HWND, UINT, WPARAM, LPARAM) at C:\Users\Misha\Desktop\TX\TXLib.h (7852):
+
+   7850: 
+   7851:         case WM_CLOSE:        $ if (_txCanvas_OnCLOSE      (wnd)) break; else return 0;
+=> 7852:         case WM_DESTROY:      $     _txCanvas_OnDESTROY    (wnd);             return 0;
+   7853: 
+   7854:         case WM_PAINT:        $     _txCanvas_OnPAINT      (wnd);             return 0;
+
+# 2 in LRESULT {anonymous}::TX::_txCanvas_WndProc(HWND, UINT, WPARAM, LPARAM) at C:\Users\Misha\Desktop\TX\TXLib.h (7879):
+
+   7877:         }
+   7878: 
+=> 7879: $   return DefWindowProc (wnd, msg, wpar, lpar);
+   7880:     }
+   7881: 
+
+# 3 in LRESULT {anonymous}::TX::_txCanvas_WndProc(HWND, UINT, WPARAM, LPARAM) at C:\Users\Misha\Desktop\TX\TXLib.h (7879):
+
+   7877:         }
+   7878: 
+=> 7879: $   return DefWindowProc (wnd, msg, wpar, lpar);
+   7880:     }
+   7881: 
+
+# 4 in unsigned int {anonymous}::TX::_txCanvas_ThreadProc(void*) at C:\Users\Misha\Desktop\TX\TXLib.h (7655):
+
+   7653: 
+   7654: $       TranslateMessage (&msg);
+=> 7655: $       DispatchMessage  (&msg);
+   7656: 
+   7657: $       Sleep (0);
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 105, Date: 2018-06-12 00:00:00 +0300]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	C:\Users\Misha\Desktop\TX\TXLib.h
+Compiled:	Aug  1 2018 18:41:45, GNU g++ 4.8.1, std=201103L, MinGW Runtime 3.20, 32-bit, DEBUG
+Started:	Aug 01 2018 18:41:48
+
+Run file:	\\vmware-host\Shared Folders\Windows 7\AnimationCheck.exe
+Directory:	\\vmware-host\Shared Folders\Windows 7
+
+--------------------------------------------------
+
+--------------------------------------------------
+TXLib сообщает:
+
+Программа: \\vmware-host\Shared Folders\Windows 7\AnimationCheck.exe, файл: C:\Users\Misha\Desktop\TX\TXLib.h, строка: 7920, функция: bool {anonymous}::TX::_txCanvas_OnDESTROY(HWND),
+
+Сообщение: Cannot lock GDI to free resources
+
+#1: TXLib [Ver: 00173a, Rev: 105, Date: 2018-06-12 00:00:00 +0300], Instance: 0x004FE2C0 (32-bit), Flags: CMdRE0, Thread: 0xF90 (Canvas), errno: 34 (Result too large). 
+
+--------------------------------------------------
+Стек вызовов:
+
+# 0 0x00409AEF in \\vmware-host\Shared Folders\Windows 7\AnimationCheck.exe: _txCanvas_OnDESTROY() at C:/Users/Misha/Desktop/TX/TXLib.h (7920)
+# 1 0x0040930D in \\vmware-host\Shared Folders\Windows 7\AnimationCheck.exe: _txCanvas_WndProc() at C:/Users/Misha/Desktop/TX/TXLib.h (7852)
+# 2 0x75F0C4E7 in C:\Windows\system32\USER32.dll: gapfnScSendMessage()
+# 3 0x75F0C5E7 in C:\Windows\system32\USER32.dll: gapfnScSendMessage()
+# 4 0x75F04F0E in C:\Windows\system32\USER32.dll: GetScrollBarInfo()
+# 5 0x75F04F7D in C:\Windows\system32\USER32.dll: GetScrollBarInfo()
+# 6 0x77736FEE in C:\Windows\SYSTEM32\ntdll.dll: KiUserCallbackDispatcher()
+# 7 0x75EFBB13 in C:\Windows\system32\USER32.dll: CharLowerW()
+# 8 0x75EFBB70 in C:\Windows\system32\USER32.dll: DefWindowProcA()
+# 9 0x00409501 in \\vmware-host\Shared Folders\Windows 7\AnimationCheck.exe: _txCanvas_WndProc() at C:/Users/Misha/Desktop/TX/TXLib.h (7879)
+#10 0x75F0C4E7 in C:\Windows\system32\USER32.dll: gapfnScSendMessage()
+#11 0x75F0C5E7 in C:\Windows\system32\USER32.dll: gapfnScSendMessage()
+#12 0x75F04F0E in C:\Windows\system32\USER32.dll: GetScrollBarInfo()
+#13 0x75F04F7D in C:\Windows\system32\USER32.dll: GetScrollBarInfo()
+#14 0x77736FEE in C:\Windows\SYSTEM32\ntdll.dll: KiUserCallbackDispatcher()
+#15 0x75EFBB13 in C:\Windows\system32\USER32.dll: CharLowerW()
+#16 0x74335EEF in C:\Windows\system32\uxtheme.dll: Ordinal45()
+#17 0x7434D128 in C:\Windows\system32\uxtheme.dll: SetWindowThemeAttribute()
+#19 0x74335DDA in C:\Windows\system32\uxtheme.dll: Ordinal45()
+#20 0x75EFC6B7 in C:\Windows\system32\USER32.dll: EnumDesktopsW()
+#21 0x00409501 in \\vmware-host\Shared Folders\Windows 7\AnimationCheck.exe: _txCanvas_WndProc() at C:/Users/Misha/Desktop/TX/TXLib.h (7879)
+#22 0x75F0C4E7 in C:\Windows\system32\USER32.dll: gapfnScSendMessage()
+#23 0x75F05F9F in C:\Windows\system32\USER32.dll: SetPropW()
+#24 0x75F0CC19 in C:\Windows\system32\USER32.dll: gapfnScSendMessage()
+#25 0x75F02E41 in C:\Windows\system32\USER32.dll: DispatchMessageA()
+#26 0x00407C5D in \\vmware-host\Shared Folders\Windows 7\AnimationCheck.exe: _txCanvas_ThreadProc() at C:/Users/Misha/Desktop/TX/TXLib.h (7655)
+#27 0x75B51287 in C:\Windows\system32\msvcrt.dll: itow_s()
+#28 0x75B51328 in C:\Windows\system32\msvcrt.dll: endthreadex()
+#29 0x767A3C45 in C:\Windows\system32\kernel32.dll: BaseThreadInitThunk()
+#30 0x777537F5 in C:\Windows\SYSTEM32\ntdll.dll: RtlInitializeExceptionChain()
+#31 0x777537C8 in C:\Windows\SYSTEM32\ntdll.dll: RtlInitializeExceptionChain()
+
+--------------------------------------------------
+Стек вызовов TX:
+
+# 0 in bool {anonymous}::TX::_txCanvas_OnDESTROY(HWND) at C:\Users\Misha\Desktop\TX\TXLib.h (7920):
+
+   7918: $   bool locked = false;
+   7919: $   _txWaitFor ((locked = txLock (false), locked), _TX_TIMEOUT);
+=> 7920: $   if (!locked) TX_DEBUG_ERROR ("Cannot lock GDI to free resources");
+   7921: 
+   7922:     // Освобождаем пользовательские ресурсы
+
+# 1 in LRESULT {anonymous}::TX::_txCanvas_WndProc(HWND, UINT, WPARAM, LPARAM) at C:\Users\Misha\Desktop\TX\TXLib.h (7852):
+
+   7850: 
+   7851:         case WM_CLOSE:        $ if (_txCanvas_OnCLOSE      (wnd)) break; else return 0;
+=> 7852:         case WM_DESTROY:      $     _txCanvas_OnDESTROY    (wnd);             return 0;
+   7853: 
+   7854:         case WM_PAINT:        $     _txCanvas_OnPAINT      (wnd);             return 0;
+
+# 2 in LRESULT {anonymous}::TX::_txCanvas_WndProc(HWND, UINT, WPARAM, LPARAM) at C:\Users\Misha\Desktop\TX\TXLib.h (7879):
+
+   7877:         }
+   7878: 
+=> 7879: $   return DefWindowProc (wnd, msg, wpar, lpar);
+   7880:     }
+   7881: 
+
+# 3 in LRESULT {anonymous}::TX::_txCanvas_WndProc(HWND, UINT, WPARAM, LPARAM) at C:\Users\Misha\Desktop\TX\TXLib.h (7879):
+
+   7877:         }
+   7878: 
+=> 7879: $   return DefWindowProc (wnd, msg, wpar, lpar);
+   7880:     }
+   7881: 
+
+# 4 in unsigned int {anonymous}::TX::_txCanvas_ThreadProc(void*) at C:\Users\Misha\Desktop\TX\TXLib.h (7655):
+
+   7653: 
+   7654: $       TranslateMessage (&msg);
+=> 7655: $       DispatchMessage  (&msg);
+   7656: 
+   7657: $       Sleep (0);
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 105, Date: 2018-06-12 00:00:00 +0300]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	C:\Users\Misha\Desktop\TX\TXLib.h
+Compiled:	Aug  1 2018 18:42:07, GNU g++ 4.8.1, std=201103L, MinGW Runtime 3.20, 32-bit, DEBUG
+Started:	Aug 01 2018 18:42:09
+
+Run file:	\\vmware-host\Shared Folders\Windows 7\AnimationCheck.exe
+Directory:	\\vmware-host\Shared Folders\Windows 7
+
+--------------------------------------------------
+
+--------------------------------------------------
+TXLib сообщает:
+
+Программа: \\vmware-host\Shared Folders\Windows 7\AnimationCheck.exe, файл: C:\Users\Misha\Desktop\TX\TXLib.h, строка: 7920, функция: bool {anonymous}::TX::_txCanvas_OnDESTROY(HWND),
+
+Сообщение: Cannot lock GDI to free resources
+
+#1: TXLib [Ver: 00173a, Rev: 105, Date: 2018-06-12 00:00:00 +0300], Instance: 0x004FE2C0 (32-bit), Flags: CMdRE0, Thread: 0x7A0 (Canvas), errno: 34 (Result too large). 
+
+--------------------------------------------------
+Стек вызовов:
+
+# 0 0x00409AEF in \\vmware-host\Shared Folders\Windows 7\AnimationCheck.exe: _txCanvas_OnDESTROY() at C:/Users/Misha/Desktop/TX/TXLib.h (7920)
+# 1 0x0040930D in \\vmware-host\Shared Folders\Windows 7\AnimationCheck.exe: _txCanvas_WndProc() at C:/Users/Misha/Desktop/TX/TXLib.h (7852)
+# 2 0x75F0C4E7 in C:\Windows\system32\USER32.dll: gapfnScSendMessage()
+# 3 0x75F0C5E7 in C:\Windows\system32\USER32.dll: gapfnScSendMessage()
+# 4 0x75F04F0E in C:\Windows\system32\USER32.dll: GetScrollBarInfo()
+# 5 0x75F04F7D in C:\Windows\system32\USER32.dll: GetScrollBarInfo()
+# 6 0x77736FEE in C:\Windows\SYSTEM32\ntdll.dll: KiUserCallbackDispatcher()
+# 7 0x75EFBB13 in C:\Windows\system32\USER32.dll: CharLowerW()
+# 8 0x75EFBB70 in C:\Windows\system32\USER32.dll: DefWindowProcA()
+# 9 0x00409501 in \\vmware-host\Shared Folders\Windows 7\AnimationCheck.exe: _txCanvas_WndProc() at C:/Users/Misha/Desktop/TX/TXLib.h (7879)
+#10 0x75F0C4E7 in C:\Windows\system32\USER32.dll: gapfnScSendMessage()
+#11 0x75F0C5E7 in C:\Windows\system32\USER32.dll: gapfnScSendMessage()
+#12 0x75F04F0E in C:\Windows\system32\USER32.dll: GetScrollBarInfo()
+#13 0x75F04F7D in C:\Windows\system32\USER32.dll: GetScrollBarInfo()
+#14 0x77736FEE in C:\Windows\SYSTEM32\ntdll.dll: KiUserCallbackDispatcher()
+#15 0x75EFBB13 in C:\Windows\system32\USER32.dll: CharLowerW()
+#16 0x74335EEF in C:\Windows\system32\uxtheme.dll: Ordinal45()
+#17 0x7434D128 in C:\Windows\system32\uxtheme.dll: SetWindowThemeAttribute()
+#19 0x74335DDA in C:\Windows\system32\uxtheme.dll: Ordinal45()
+#20 0x75EFC6B7 in C:\Windows\system32\USER32.dll: EnumDesktopsW()
+#21 0x00409501 in \\vmware-host\Shared Folders\Windows 7\AnimationCheck.exe: _txCanvas_WndProc() at C:/Users/Misha/Desktop/TX/TXLib.h (7879)
+#22 0x75F0C4E7 in C:\Windows\system32\USER32.dll: gapfnScSendMessage()
+#23 0x75F05F9F in C:\Windows\system32\USER32.dll: SetPropW()
+#24 0x75F0CC19 in C:\Windows\system32\USER32.dll: gapfnScSendMessage()
+#25 0x75F02E41 in C:\Windows\system32\USER32.dll: DispatchMessageA()
+#26 0x00407C5D in \\vmware-host\Shared Folders\Windows 7\AnimationCheck.exe: _txCanvas_ThreadProc() at C:/Users/Misha/Desktop/TX/TXLib.h (7655)
+#27 0x75B51287 in C:\Windows\system32\msvcrt.dll: itow_s()
+#28 0x75B51328 in C:\Windows\system32\msvcrt.dll: endthreadex()
+#29 0x767A3C45 in C:\Windows\system32\kernel32.dll: BaseThreadInitThunk()
+#30 0x777537F5 in C:\Windows\SYSTEM32\ntdll.dll: RtlInitializeExceptionChain()
+#31 0x777537C8 in C:\Windows\SYSTEM32\ntdll.dll: RtlInitializeExceptionChain()
+
+--------------------------------------------------
+Стек вызовов TX:
+
+# 0 in bool {anonymous}::TX::_txCanvas_OnDESTROY(HWND) at C:\Users\Misha\Desktop\TX\TXLib.h (7920):
+
+   7918: $   bool locked = false;
+   7919: $   _txWaitFor ((locked = txLock (false), locked), _TX_TIMEOUT);
+=> 7920: $   if (!locked) TX_DEBUG_ERROR ("Cannot lock GDI to free resources");
+   7921: 
+   7922:     // Освобождаем пользовательские ресурсы
+
+# 1 in LRESULT {anonymous}::TX::_txCanvas_WndProc(HWND, UINT, WPARAM, LPARAM) at C:\Users\Misha\Desktop\TX\TXLib.h (7852):
+
+   7850: 
+   7851:         case WM_CLOSE:        $ if (_txCanvas_OnCLOSE      (wnd)) break; else return 0;
+=> 7852:         case WM_DESTROY:      $     _txCanvas_OnDESTROY    (wnd);             return 0;
+   7853: 
+   7854:         case WM_PAINT:        $     _txCanvas_OnPAINT      (wnd);             return 0;
+
+# 2 in LRESULT {anonymous}::TX::_txCanvas_WndProc(HWND, UINT, WPARAM, LPARAM) at C:\Users\Misha\Desktop\TX\TXLib.h (7879):
+
+   7877:         }
+   7878: 
+=> 7879: $   return DefWindowProc (wnd, msg, wpar, lpar);
+   7880:     }
+   7881: 
+
+# 3 in LRESULT {anonymous}::TX::_txCanvas_WndProc(HWND, UINT, WPARAM, LPARAM) at C:\Users\Misha\Desktop\TX\TXLib.h (7879):
+
+   7877:         }
+   7878: 
+=> 7879: $   return DefWindowProc (wnd, msg, wpar, lpar);
+   7880:     }
+   7881: 
+
+# 4 in unsigned int {anonymous}::TX::_txCanvas_ThreadProc(void*) at C:\Users\Misha\Desktop\TX\TXLib.h (7655):
+
+   7653: 
+   7654: $       TranslateMessage (&msg);
+=> 7655: $       DispatchMessage  (&msg);
+   7656: 
+   7657: $       Sleep (0);
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 105, Date: 2018-06-12 00:00:00 +0300]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	C:\Users\Misha\Desktop\TX\TXLib.h
+Compiled:	Aug  1 2018 18:43:34, GNU g++ 4.8.1, std=201103L, MinGW Runtime 3.20, 32-bit, DEBUG
+Started:	Aug 01 2018 18:43:36
+
+Run file:	\\vmware-host\Shared Folders\Windows 7\AnimationCheck.exe
+Directory:	\\vmware-host\Shared Folders\Windows 7
+
+--------------------------------------------------
+
+--------------------------------------------------
+TXLib сообщает:
+
+Программа: \\vmware-host\Shared Folders\Windows 7\AnimationCheck.exe, файл: C:\Users\Misha\Desktop\TX\TXLib.h, строка: 7920, функция: bool {anonymous}::TX::_txCanvas_OnDESTROY(HWND),
+
+Сообщение: Cannot lock GDI to free resources
+
+#1: TXLib [Ver: 00173a, Rev: 105, Date: 2018-06-12 00:00:00 +0300], Instance: 0x004FE2C0 (32-bit), Flags: CMdRE0, Thread: 0x109C (Canvas), errno: 34 (Result too large). 
+
+--------------------------------------------------
+Стек вызовов:
+
+# 0 0x00409AEF in \\vmware-host\Shared Folders\Windows 7\AnimationCheck.exe: _txCanvas_OnDESTROY() at C:/Users/Misha/Desktop/TX/TXLib.h (7920)
+# 1 0x0040930D in \\vmware-host\Shared Folders\Windows 7\AnimationCheck.exe: _txCanvas_WndProc() at C:/Users/Misha/Desktop/TX/TXLib.h (7852)
+# 2 0x75F0C4E7 in C:\Windows\system32\USER32.dll: gapfnScSendMessage()
+# 3 0x75F0C5E7 in C:\Windows\system32\USER32.dll: gapfnScSendMessage()
+# 4 0x75F04F0E in C:\Windows\system32\USER32.dll: GetScrollBarInfo()
+# 5 0x75F04F7D in C:\Windows\system32\USER32.dll: GetScrollBarInfo()
+# 6 0x77736FEE in C:\Windows\SYSTEM32\ntdll.dll: KiUserCallbackDispatcher()
+# 7 0x75EFBB13 in C:\Windows\system32\USER32.dll: CharLowerW()
+# 8 0x75EFBB70 in C:\Windows\system32\USER32.dll: DefWindowProcA()
+# 9 0x00409501 in \\vmware-host\Shared Folders\Windows 7\AnimationCheck.exe: _txCanvas_WndProc() at C:/Users/Misha/Desktop/TX/TXLib.h (7879)
+#10 0x75F0C4E7 in C:\Windows\system32\USER32.dll: gapfnScSendMessage()
+#11 0x75F0C5E7 in C:\Windows\system32\USER32.dll: gapfnScSendMessage()
+#12 0x75F04F0E in C:\Windows\system32\USER32.dll: GetScrollBarInfo()
+#13 0x75F04F7D in C:\Windows\system32\USER32.dll: GetScrollBarInfo()
+#14 0x77736FEE in C:\Windows\SYSTEM32\ntdll.dll: KiUserCallbackDispatcher()
+#15 0x75EFBB13 in C:\Windows\system32\USER32.dll: CharLowerW()
+#16 0x74335EEF in C:\Windows\system32\uxtheme.dll: Ordinal45()
+#17 0x7434D128 in C:\Windows\system32\uxtheme.dll: SetWindowThemeAttribute()
+#19 0x74335DDA in C:\Windows\system32\uxtheme.dll: Ordinal45()
+#20 0x75EFC6B7 in C:\Windows\system32\USER32.dll: EnumDesktopsW()
+#21 0x00409501 in \\vmware-host\Shared Folders\Windows 7\AnimationCheck.exe: _txCanvas_WndProc() at C:/Users/Misha/Desktop/TX/TXLib.h (7879)
+#22 0x75F0C4E7 in C:\Windows\system32\USER32.dll: gapfnScSendMessage()
+#23 0x75F05F9F in C:\Windows\system32\USER32.dll: SetPropW()
+#24 0x75F0CC19 in C:\Windows\system32\USER32.dll: gapfnScSendMessage()
+#25 0x75F02E41 in C:\Windows\system32\USER32.dll: DispatchMessageA()
+#26 0x00407C5D in \\vmware-host\Shared Folders\Windows 7\AnimationCheck.exe: _txCanvas_ThreadProc() at C:/Users/Misha/Desktop/TX/TXLib.h (7655)
+#27 0x75B51287 in C:\Windows\system32\msvcrt.dll: itow_s()
+#28 0x75B51328 in C:\Windows\system32\msvcrt.dll: endthreadex()
+#29 0x767A3C45 in C:\Windows\system32\kernel32.dll: BaseThreadInitThunk()
+#30 0x777537F5 in C:\Windows\SYSTEM32\ntdll.dll: RtlInitializeExceptionChain()
+#31 0x777537C8 in C:\Windows\SYSTEM32\ntdll.dll: RtlInitializeExceptionChain()
+
+--------------------------------------------------
+Стек вызовов TX:
+
+# 0 in bool {anonymous}::TX::_txCanvas_OnDESTROY(HWND) at C:\Users\Misha\Desktop\TX\TXLib.h (7920):
+
+   7918: $   bool locked = false;
+   7919: $   _txWaitFor ((locked = txLock (false), locked), _TX_TIMEOUT);
+=> 7920: $   if (!locked) TX_DEBUG_ERROR ("Cannot lock GDI to free resources");
+   7921: 
+   7922:     // Освобождаем пользовательские ресурсы
+
+# 1 in LRESULT {anonymous}::TX::_txCanvas_WndProc(HWND, UINT, WPARAM, LPARAM) at C:\Users\Misha\Desktop\TX\TXLib.h (7852):
+
+   7850: 
+   7851:         case WM_CLOSE:        $ if (_txCanvas_OnCLOSE      (wnd)) break; else return 0;
+=> 7852:         case WM_DESTROY:      $     _txCanvas_OnDESTROY    (wnd);             return 0;
+   7853: 
+   7854:         case WM_PAINT:        $     _txCanvas_OnPAINT      (wnd);             return 0;
+
+# 2 in LRESULT {anonymous}::TX::_txCanvas_WndProc(HWND, UINT, WPARAM, LPARAM) at C:\Users\Misha\Desktop\TX\TXLib.h (7879):
+
+   7877:         }
+   7878: 
+=> 7879: $   return DefWindowProc (wnd, msg, wpar, lpar);
+   7880:     }
+   7881: 
+
+# 3 in LRESULT {anonymous}::TX::_txCanvas_WndProc(HWND, UINT, WPARAM, LPARAM) at C:\Users\Misha\Desktop\TX\TXLib.h (7879):
+
+   7877:         }
+   7878: 
+=> 7879: $   return DefWindowProc (wnd, msg, wpar, lpar);
+   7880:     }
+   7881: 
+
+# 4 in unsigned int {anonymous}::TX::_txCanvas_ThreadProc(void*) at C:\Users\Misha\Desktop\TX\TXLib.h (7655):
+
+   7653: 
+   7654: $       TranslateMessage (&msg);
+=> 7655: $       DispatchMessage  (&msg);
+   7656: 
+   7657: $       Sleep (0);
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 105, Date: 2018-06-12 00:00:00 +0300]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	C:\Users\Misha\Desktop\TX\TXLib.h
+Compiled:	Aug  1 2018 18:47:22, GNU g++ 4.8.1, std=201103L, MinGW Runtime 3.20, 32-bit, DEBUG
+Started:	Aug 01 2018 18:47:26
+
+Run file:	\\vmware-host\Shared Folders\Windows 7\AnimationCheck.exe
+Directory:	\\vmware-host\Shared Folders\Windows 7
+
+--------------------------------------------------
+
+--------------------------------------------------
+TXLib сообщает:
+
+Программа: \\vmware-host\Shared Folders\Windows 7\AnimationCheck.exe, файл: C:\Users\Misha\Desktop\TX\TXLib.h, строка: 11253, функция: bool {anonymous}::TX::txAlphaBlend(HDC, double, double, double, double, HDC, double, double, double),
+
+Сообщение: Параметр "sourceImage" неверен. Возможно, этот холст не создан, или уже уничтожен, или не загрузилась картинка.
+
+#1: TXLib [Ver: 00173a, Rev: 105, Date: 2018-06-12 00:00:00 +0300], Instance: 0x004FE2C0 (32-bit), Flags: CMdRe0, Thread: 0x10B8 (Main), GetLastError(): 13 (Недопустимые данные). 
+
+--------------------------------------------------
+Стек вызовов:
+
+# 0 0x004208C4 in \\vmware-host\Shared Folders\Windows 7\AnimationCheck.exe: txAlphaBlend() at C:/Users/Misha/Desktop/TX/TXLib.h (11253)
+
+# 1 0x00426ACF in \\vmware-host\Shared Folders\Windows 7\AnimationCheck.exe: Check() at //vmware-host/Shared Folders/Windows 7/AnimationCheck.cpp (33):
+
+     31:         txSetFillColor (TX_BLACK);
+     32: 
+=>   33:         txAlphaBlend (txDC (), Benchx, Benchy, BenchX, 0, Bench, t / 35 % 4 * 1680);
+     34: 
+     35:         txDeleteDC (Bench);
+
+# 2 0x00426990 in \\vmware-host\Shared Folders\Windows 7\AnimationCheck.exe: main() at //vmware-host/Shared Folders/Windows 7/AnimationCheck.cpp (20):
+
+     18:     int t = 0;
+     19: 
+=>   20:     Check (Benchx, Benchy, BenchX, Bench, t);
+     21: 
+     22:     }
+
+--------------------------------------------------
+Стек вызовов TX:
+
+# 0 in bool {anonymous}::TX::txAlphaBlend(HDC, double, double, double, double, HDC, double, double, double) at C:\Users\Misha\Desktop\TX\TXLib.h (11253):
+
+  11251:     {
+  11252: $1  if (_TX_HDC_FAILED (destImage))   return false;
+=>11253: $   if (_TX_HDC_FAILED (sourceImage)) return false;
+  11254: 
+  11255: $   POINT size = txGetExtent (sourceImage);
+
+# 1 in void Check(int, int, int, HDC, int) at \\vmware-host\Shared Folders\Windows 7\AnimationCheck.cpp (33):
+
+     31:         txSetFillColor (TX_BLACK);
+     32: 
+=>   33:         txAlphaBlend (txDC (), Benchx, Benchy, BenchX, 0, Bench, t / 35 % 4 * 1680);
+     34: 
+     35:         txDeleteDC (Bench);
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 105, Date: 2018-06-12 00:00:00 +0300]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	C:\Users\Misha\Desktop\TX\TXLib.h
+Compiled:	Aug  1 2018 18:50:45, GNU g++ 4.8.1, std=201103L, MinGW Runtime 3.20, 32-bit, DEBUG
+Started:	Aug 01 2018 18:50:49
+
+Run file:	\\vmware-host\Shared Folders\Windows 7\AnimationCheck.exe
+Directory:	\\vmware-host\Shared Folders\Windows 7
+
+--------------------------------------------------
+
+--------------------------------------------------
+TXLib сообщает:
+
+Программа: \\vmware-host\Shared Folders\Windows 7\AnimationCheck.exe, файл: C:\Users\Misha\Desktop\TX\TXLib.h, строка: 8556, функция: bool {anonymous}::TX::_txBuffer_Delete(HDC__**),
+
+Сообщение: Параметр "*dc" неверен. Возможно, этот холст не создан, или уже уничтожен, или не загрузилась картинка.
+
+#2: TXLib [Ver: 00173a, Rev: 105, Date: 2018-06-12 00:00:00 +0300], Instance: 0x004FE2C0 (32-bit), Flags: CMdRe0, Thread: 0x10B8 (Main), GetLastError(): 13 (Недопустимые данные). 
+
+--------------------------------------------------
+Стек вызовов:
+
+# 0 0x0040DBC1 in \\vmware-host\Shared Folders\Windows 7\AnimationCheck.exe: _txBuffer_Delete() at C:/Users/Misha/Desktop/TX/TXLib.h (8556)
+# 1 0x0041F4AE in \\vmware-host\Shared Folders\Windows 7\AnimationCheck.exe: txDeleteDC() at C:/Users/Misha/Desktop/TX/TXLib.h (11151)
+# 2 0x0041F715 in \\vmware-host\Shared Folders\Windows 7\AnimationCheck.exe: txDeleteDC() at C:/Users/Misha/Desktop/TX/TXLib.h (11167)
+
+# 3 0x00426AF6 in \\vmware-host\Shared Folders\Windows 7\AnimationCheck.exe: Check() at //vmware-host/Shared Folders/Windows 7/AnimationCheck.cpp (35):
+
+     33:         txAlphaBlend (txDC (), Benchx, Benchy, BenchX, 0, Bench, t / 35 % 4 * 1680);
+     34: 
+=>   35:         txDeleteDC (Bench);
+     36:         }
+     37:     }
+
+# 4 0x00426990 in \\vmware-host\Shared Folders\Windows 7\AnimationCheck.exe: main() at //vmware-host/Shared Folders/Windows 7/AnimationCheck.cpp (20):
+
+     18:     int t = 0;
+     19: 
+=>   20:     Check (Benchx, Benchy, BenchX, Bench, t);
+     21: 
+     22:     }
+
+--------------------------------------------------
+Стек вызовов TX:
+
+# 0 in bool {anonymous}::TX::_txBuffer_Delete(HDC__**) at C:\Users\Misha\Desktop\TX\TXLib.h (8556):
+
+   8554: $   if (!*dc) return false;
+   8555: 
+=> 8556: $   if (_TX_HDC_FAILED (*dc)) return false;
+   8557: 
+   8558: $   if (!Win32::GetObjectType (Win32::GetCurrentObject (*dc, OBJ_BITMAP))) return false;
+
+# 1 in bool {anonymous}::TX::txDeleteDC(HDC__**) at C:\Users\Misha\Desktop\TX\TXLib.h (11151):
+
+  11149: 
+  11150: $   HDC  dc = *pdc;
+=>11151: $   bool ok = _txBuffer_Delete (pdc);
+  11152: $   if (!ok) return false;
+  11153: 
+
+# 2 in bool {anonymous}::TX::txDeleteDC(HDC) at C:\Users\Misha\Desktop\TX\TXLib.h (11167):
+
+  11165: bool txDeleteDC (HDC dc)
+  11166:     {
+=>11167: $1  return txDeleteDC (&dc);
+  11168:     }
+  11169: 
+
+# 3 in void Check(int, int, int, HDC, int) at \\vmware-host\Shared Folders\Windows 7\AnimationCheck.cpp (35):
+
+     33:         txAlphaBlend (txDC (), Benchx, Benchy, BenchX, 0, Bench, t / 35 % 4 * 1680);
+     34: 
+=>   35:         txDeleteDC (Bench);
+     36:         }
+     37:     }
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 105, Date: 2018-06-12 00:00:00 +0300]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	C:\Users\Misha\Desktop\TX\TXLib.h
+Compiled:	Aug  1 2018 18:50:45, GNU g++ 4.8.1, std=201103L, MinGW Runtime 3.20, 32-bit, DEBUG
+Started:	Aug 01 2018 18:50:48
+
+Run file:	\\vmware-host\Shared Folders\Windows 7\AnimationCheck.exe
+Directory:	\\vmware-host\Shared Folders\Windows 7
+
+--------------------------------------------------
+
+--------------------------------------------------
+TXLib сообщает:
+
+Программа: \\vmware-host\Shared Folders\Windows 7\AnimationCheck.exe, файл: C:\Users\Misha\Desktop\TX\TXLib.h, строка: 11253, функция: bool {anonymous}::TX::txAlphaBlend(HDC, double, double, double, double, HDC, double, double, double),
+
+Сообщение: Параметр "sourceImage" неверен. Возможно, этот холст не создан, или уже уничтожен, или не загрузилась картинка.
+
+#1: TXLib [Ver: 00173a, Rev: 105, Date: 2018-06-12 00:00:00 +0300], Instance: 0x004FE2C0 (32-bit), Flags: CMdRe0, Thread: 0x13D0 (Main), GetLastError(): 13 (Недопустимые данные). 
+
+--------------------------------------------------
+Стек вызовов:
+
+# 0 0x004208C4 in \\vmware-host\Shared Folders\Windows 7\AnimationCheck.exe: txAlphaBlend() at C:/Users/Misha/Desktop/TX/TXLib.h (11253)
+
+# 1 0x00426ADB in \\vmware-host\Shared Folders\Windows 7\AnimationCheck.exe: Check() at //vmware-host/Shared Folders/Windows 7/AnimationCheck.cpp (33):
+
+     31:         txSetFillColor (TX_BLACK);
+     32: 
+=>   33:         txAlphaBlend (txDC (), Benchx, Benchy, BenchX, 0, Bench, *t / 35 % 4 * 1680);
+     34: 
+     35:         txDeleteDC (Bench);
+
+# 2 0x00426990 in \\vmware-host\Shared Folders\Windows 7\AnimationCheck.exe: main() at //vmware-host/Shared Folders/Windows 7/AnimationCheck.cpp (20):
+
+     18:     int t = 0;
+     19: 
+=>   20:     Check (Benchx, Benchy, BenchX, Bench, &t);
+     21: 
+     22:     }
+
+--------------------------------------------------
+Стек вызовов TX:
+
+# 0 in bool {anonymous}::TX::txAlphaBlend(HDC, double, double, double, double, HDC, double, double, double) at C:\Users\Misha\Desktop\TX\TXLib.h (11253):
+
+  11251:     {
+  11252: $1  if (_TX_HDC_FAILED (destImage))   return false;
+=>11253: $   if (_TX_HDC_FAILED (sourceImage)) return false;
+  11254: 
+  11255: $   POINT size = txGetExtent (sourceImage);
+
+# 1 in void Check(int, int, int, HDC, int*) at \\vmware-host\Shared Folders\Windows 7\AnimationCheck.cpp (33):
+
+     31:         txSetFillColor (TX_BLACK);
+     32: 
+=>   33:         txAlphaBlend (txDC (), Benchx, Benchy, BenchX, 0, Bench, *t / 35 % 4 * 1680);
+     34: 
+     35:         txDeleteDC (Bench);
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 105, Date: 2018-06-12 00:00:00 +0300]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	C:\Users\Misha\Desktop\TX\TXLib.h
+Compiled:	Aug  1 2018 18:52:01, GNU g++ 4.8.1, std=201103L, MinGW Runtime 3.20, 32-bit, DEBUG
+Started:	Aug 01 2018 18:52:04
+
+Run file:	\\vmware-host\Shared Folders\Windows 7\AnimationCheck.exe
+Directory:	\\vmware-host\Shared Folders\Windows 7
+
+--------------------------------------------------
+
+--------------------------------------------------
+TXLib сообщает:
+
+Программа: \\vmware-host\Shared Folders\Windows 7\AnimationCheck.exe, файл: C:\Users\Misha\Desktop\TX\TXLib.h, строка: 11266, функция: bool {anonymous}::TX::txAlphaBlend(HDC, double, double, double, double, HDC, double, double, double),
+
+Сообщение: Прямоугольник копируемой области {3360, 0, 5040, 1050} не полностью лежит внутри изображения-источника {0, 0, 3360, 1050}, функция txAlphaBlend() работать не будет.
+
+#1: TXLib [Ver: 00173a, Rev: 105, Date: 2018-06-12 00:00:00 +0300], Instance: 0x004FE2C0 (32-bit), Flags: CMdRe0, Thread: 0x13C4 (Main), GetLastError(): 13 (Недопустимые данные). 
+From: C:\Users\Misha\Desktop\TX\TXLib.h (11265) bool {anonymous}::TX::txAlphaBlend(HDC, double, double, double, double, HDC, double, double, double).
+
+--------------------------------------------------
+Стек вызовов:
+
+# 0 0x00420AE4 in \\vmware-host\Shared Folders\Windows 7\AnimationCheck.exe: txAlphaBlend() at C:/Users/Misha/Desktop/TX/TXLib.h (11266)
+
+# 1 0x00426ADB in \\vmware-host\Shared Folders\Windows 7\AnimationCheck.exe: Check() at //vmware-host/Shared Folders/Windows 7/AnimationCheck.cpp (33):
+
+     31:         txSetFillColor (TX_BLACK);
+     32: 
+=>   33:         txAlphaBlend (txDC (), Benchx, Benchy, BenchX, 0, Bench, *t / 35 % 4 * 1680);
+     34: 
+     35:         t++;
+
+# 2 0x00426990 in \\vmware-host\Shared Folders\Windows 7\AnimationCheck.exe: main() at //vmware-host/Shared Folders/Windows 7/AnimationCheck.cpp (20):
+
+     18:     int t = 0;
+     19: 
+=>   20:     Check (Benchx, Benchy, BenchX, Bench, &t);
+     21: 
+     22:     }
+
+--------------------------------------------------
+Стек вызовов TX:
+
+# 0 in bool {anonymous}::TX::txAlphaBlend(HDC, double, double, double, double, HDC, double, double, double) at C:\Users\Misha\Desktop\TX\TXLib.h (11265):
+
+  11263:         {
+  11264: $       SetLastError (ERROR_INVALID_DATA);
+=>11265: $       TX_ERROR ("Прямоугольник копируемой области {%lg, %lg, %lg, %lg} не полностью лежит внутри изображения-источника {%d, %d, %d, %d}, "
+  11266:                   "функция txAlphaBlend() работать не будет." _ xSource _ ySource _ xSource + width _ ySource + height _ 0 _ 0 _ size.x _ size.y);
+  11267:         }
+
+# 1 in void Check(int, int, int, HDC, int*) at \\vmware-host\Shared Folders\Windows 7\AnimationCheck.cpp (33):
+
+     31:         txSetFillColor (TX_BLACK);
+     32: 
+=>   33:         txAlphaBlend (txDC (), Benchx, Benchy, BenchX, 0, Bench, *t / 35 % 4 * 1680);
+     34: 
+     35:         t++;
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 105, Date: 2018-06-12 00:00:00 +0300]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	C:\Users\Misha\Desktop\TX\TXLib.h
+Compiled:	Aug  1 2018 18:53:22, GNU g++ 4.8.1, std=201103L, MinGW Runtime 3.20, 32-bit, DEBUG
+Started:	Aug 01 2018 18:53:26
+
+Run file:	\\vmware-host\Shared Folders\Windows 7\AnimationCheck.exe
+Directory:	\\vmware-host\Shared Folders\Windows 7
+
+--------------------------------------------------
+
+--------------------------------------------------
+TXLib сообщает:
+
+Программа: \\vmware-host\Shared Folders\Windows 7\AnimationCheck.exe, файл: C:\Users\Misha\Desktop\TX\TXLib.h, строка: 11266, функция: bool {anonymous}::TX::txAlphaBlend(HDC, double, double, double, double, HDC, double, double, double),
+
+Сообщение: Прямоугольник копируемой области {5040, 0, 6720, 1050} не полностью лежит внутри изображения-источника {0, 0, 3360, 1050}, функция txAlphaBlend() работать не будет.
+
+#1: TXLib [Ver: 00173a, Rev: 105, Date: 2018-06-12 00:00:00 +0300], Instance: 0x004FE2C0 (32-bit), Flags: CMdRe0, Thread: 0x2B0 (Main), GetLastError(): 13 (Недопустимые данные). 
+From: C:\Users\Misha\Desktop\TX\TXLib.h (11265) bool {anonymous}::TX::txAlphaBlend(HDC, double, double, double, double, HDC, double, double, double).
+
+--------------------------------------------------
+Стек вызовов:
+
+# 0 0x00420AE4 in \\vmware-host\Shared Folders\Windows 7\AnimationCheck.exe: txAlphaBlend() at C:/Users/Misha/Desktop/TX/TXLib.h (11266)
+
+# 1 0x00426ADB in \\vmware-host\Shared Folders\Windows 7\AnimationCheck.exe: Check() at //vmware-host/Shared Folders/Windows 7/AnimationCheck.cpp (33):
+
+     31:         txSetFillColor (TX_BLACK);
+     32: 
+=>   33:         txAlphaBlend (txDC (), Benchx, Benchy, BenchX, 0, Bench, *t / 35 % 4 * 1680);
+     34: 
+     35:         t++;
+
+# 2 0x00426990 in \\vmware-host\Shared Folders\Windows 7\AnimationCheck.exe: main() at //vmware-host/Shared Folders/Windows 7/AnimationCheck.cpp (20):
+
+     18:     int t = 0;
+     19: 
+=>   20:     Check (Benchx, Benchy, BenchX, Bench, &t);
+     21: 
+     22:     }
+
+--------------------------------------------------
+Стек вызовов TX:
+
+# 0 in bool {anonymous}::TX::txAlphaBlend(HDC, double, double, double, double, HDC, double, double, double) at C:\Users\Misha\Desktop\TX\TXLib.h (11265):
+
+  11263:         {
+  11264: $       SetLastError (ERROR_INVALID_DATA);
+=>11265: $       TX_ERROR ("Прямоугольник копируемой области {%lg, %lg, %lg, %lg} не полностью лежит внутри изображения-источника {%d, %d, %d, %d}, "
+  11266:                   "функция txAlphaBlend() работать не будет." _ xSource _ ySource _ xSource + width _ ySource + height _ 0 _ 0 _ size.x _ size.y);
+  11267:         }
+
+# 1 in void Check(int, int, int, HDC, int*) at \\vmware-host\Shared Folders\Windows 7\AnimationCheck.cpp (33):
+
+     31:         txSetFillColor (TX_BLACK);
+     32: 
+=>   33:         txAlphaBlend (txDC (), Benchx, Benchy, BenchX, 0, Bench, *t / 35 % 4 * 1680);
+     34: 
+     35:         t++;
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 105, Date: 2018-06-12 00:00:00 +0300]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	C:\Users\Misha\Desktop\TX\TXLib.h
+Compiled:	Aug  1 2018 18:54:00, GNU g++ 4.8.1, std=201103L, MinGW Runtime 3.20, 32-bit, DEBUG
+Started:	Aug 01 2018 18:54:03
+
+Run file:	\\vmware-host\Shared Folders\Windows 7\AnimationCheck.exe
+Directory:	\\vmware-host\Shared Folders\Windows 7
+
+--------------------------------------------------
