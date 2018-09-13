@@ -6,7 +6,7 @@ int main ()
     {
     txCreateWindow (GetSystemMetrics (SM_CXSCREEN), GetSystemMetrics (SM_CYSCREEN));
 
-    HDC SkatePark = txLoadImage ("SkatePark (2).bmp");
+    HDC SkatePark = txLoadImage ("Images/SkatePark (2).bmp");
 
     if (SkatePark == NULL) txMessageBox ("SkatePark (2) isn't found");
 
